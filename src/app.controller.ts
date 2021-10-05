@@ -11,7 +11,7 @@ export class AppController {
     await this.appService.sendEmail(data.value.email, data.value.name);
   }
 
-  @MessagePattern('notification-sms')
+  @MessagePattern('notification-whatsapp')
   async sendSms(@Payload() data: any): Promise<void> {
     await this.appService.sendSms(data.value.phone, data.value.name);
   }
